@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ultimate Builder – MVP</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- ACHTUNG: Ordnername groß (CSS) -->
+  <link rel="stylesheet" href="CSS/styles.css">
+  <meta name="color-scheme" content="dark light">
 </head>
 <body>
   <header>
-    <img src="assets/logo.svg" alt="logo">
-    <div class="title">Ultimate Builder – MVP (client‑only)</div>
+    <!-- ACHTUNG: Ordnername groß (Vermögenswerte) -->
+    <img src="Vermögenswerte/logo.svg" alt="Logo">
+    <div class="title">Ultimate Builder – MVP (client-only)</div>
     <div style="margin-left:auto" class="small">No API • Three.js • Optional WebLLM</div>
   </header>
 
@@ -34,7 +37,7 @@
         </div>
         <div>
           <label>Name</label>
-          <input id="node-name" placeholder="z.B. head-01">
+          <input id="node-name" placeholder="z. B. head-01">
         </div>
       </div>
       <div class="row">
@@ -65,11 +68,11 @@
       <div class="row">
         <div>
           <label>Von (Name)</label>
-          <input id="edge-from" placeholder="z.B. head-01">
+          <input id="edge-from" placeholder="z. B. head-01">
         </div>
         <div>
           <label>Nach (Name)</label>
-          <input id="edge-to" placeholder="z.B. nas-01">
+          <input id="edge-to" placeholder="z. B. nas-01">
         </div>
       </div>
       <div class="row">
@@ -101,7 +104,7 @@
     </div>
 
     <div class="card">
-      <h2>Build‑Plan</h2>
+      <h2>Build-Plan</h2>
       <button id="export-json">Export JSON</button>
       <button id="export-yaml">Export YAML</button>
       <div class="kv"><span>Knoten</span><span id="stat-nodes" class="badge">0</span></div>
@@ -112,11 +115,18 @@
       <h2>Tipps</h2>
       <ul class="small">
         <li>Ziehe Knoten mit der Maus – Layout findet Gleichgewicht.</li>
-        <li>Head‑Server + NAS + Switch + Mini‑PCs = starker Start.</li>
-        <li>Für AI‑Training: 10–25 GbE, NVMe‑Cache, genügend VRAM.</li>
+        <li>Head-Server + NAS + Switch + Mini-PCs = starker Start.</li>
+        <li>Für AI-Training: 10–25 GbE, NVMe-Cache, genügend VRAM.</li>
       </ul>
     </div>
   </aside>
+
+  <!-- ACHTUNG: js bleibt klein (Ordner heißt bei dir bereits „js“) -->
+  <script type="module" src="js/app.js"></script>
+  <noscript>Bitte JavaScript aktivieren – diese App benötigt es.</noscript>
+</body>
+</html>
+
 
   <script type="module" src="js/app.js"></script>
 </body>
