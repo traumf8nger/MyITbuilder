@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#4bff00"/>
+      <stop offset="1" stop-color="#42961d"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="80" rx="14" fill="black"/>
+  <g transform="translate(16,12)">
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="url(#g)" opacity="0.9"/>
+    <circle cx="28" cy="28" r="16" fill="black" opacity="0.8"/>
+    <circle cx="28" cy="28" r="10" fill="white" opacity="0.9"/>
+    <circle cx="28" cy="28" r="6" fill="url(#g)"/>
+    <text x="76" y="38" fill="white" font-family="Inter, system-ui, -apple-system" font-size="28" font-weight="700">
+      Ultimate Builder
+    </text>
+  </g>
+</svg>

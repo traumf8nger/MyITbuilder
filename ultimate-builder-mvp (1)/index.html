@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultimate Builder – MVP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.svg" alt="logo">
+    <div class="title">Ultimate Builder – MVP (client‑only)</div>
+    <div style="margin-left:auto" class="small">No API • Three.js • Optional WebLLM</div>
+  </header>
+
+  <div id="canvas-wrap">
+    <canvas id="three-canvas"></canvas>
+  </div>
+
+  <aside class="sidebar">
+    <div class="card">
+      <h2>Neuer Knoten</h2>
+      <div class="row">
+        <div>
+          <label>Typ</label>
+          <select id="node-type">
+            <option>Head-Server</option>
+            <option>Mini-PC</option>
+            <option>NAS/Storage</option>
+            <option>Switch</option>
+            <option>eGPU</option>
+            <option>Service (VM/Container)</option>
+          </select>
+        </div>
+        <div>
+          <label>Name</label>
+          <input id="node-name" placeholder="z.B. head-01">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>CPU (Kerne)</label>
+          <input id="node-cpu" type="number" min="0" value="8">
+        </div>
+        <div>
+          <label>RAM (GB)</label>
+          <input id="node-ram" type="number" min="0" value="32">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Netz (Gbps)</label>
+          <input id="node-net" type="number" min="1" value="10">
+        </div>
+        <div>
+          <label>GPU/VRAM (GB)</label>
+          <input id="node-vram" type="number" min="0" value="0">
+        </div>
+      </div>
+      <button class="primary" id="add-node">Knoten hinzufügen</button>
+    </div>
+
+    <div class="card">
+      <h2>Verbindung</h2>
+      <div class="row">
+        <div>
+          <label>Von (Name)</label>
+          <input id="edge-from" placeholder="z.B. head-01">
+        </div>
+        <div>
+          <label>Nach (Name)</label>
+          <input id="edge-to" placeholder="z.B. nas-01">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Bandbreite (Gbps)</label>
+          <input id="edge-bw" type="number" min="1" value="10">
+        </div>
+        <div>
+          <label>Medien</label>
+          <select id="edge-media">
+            <option>Ethernet</option>
+            <option>SFP+/DAC</option>
+            <option>SFP28</option>
+            <option>Thunderbolt</option>
+            <option>OCuLink</option>
+          </select>
+        </div>
+      </div>
+      <button id="add-edge">Verbindung hinzufügen</button>
+    </div>
+
+    <div class="card">
+      <h2>Berater – AI Light</h2>
+      <div class="toggle">
+        <input type="checkbox" id="toggle-webllm">
+        <label for="toggle-webllm">Local AI (WebLLM) aktivieren (experimentell)</label>
+      </div>
+      <div id="advice" class="small">Tipps erscheinen hier nach Änderungen.</div>
+    </div>
+
+    <div class="card">
+      <h2>Build‑Plan</h2>
+      <button id="export-json">Export JSON</button>
+      <button id="export-yaml">Export YAML</button>
+      <div class="kv"><span>Knoten</span><span id="stat-nodes" class="badge">0</span></div>
+      <div class="kv"><span>Links</span><span id="stat-edges" class="badge">0</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Tipps</h2>
+      <ul class="small">
+        <li>Ziehe Knoten mit der Maus – Layout findet Gleichgewicht.</li>
+        <li>Head‑Server + NAS + Switch + Mini‑PCs = starker Start.</li>
+        <li>Für AI‑Training: 10–25 GbE, NVMe‑Cache, genügend VRAM.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
